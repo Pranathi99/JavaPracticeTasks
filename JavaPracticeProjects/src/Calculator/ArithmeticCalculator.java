@@ -31,6 +31,10 @@ public class ArithmeticCalculator {
 				Multiplication mt=new Multiplication(num1, num2);
 				System.out.println(mt.multiplication());
 				break;
+			case 4:
+				Division dv=new Division(num1,num2);
+				System.out.println(dv.division());
+				break;
 			default:
 				System.out.println("Please enter a valid number!");
 			}
@@ -90,5 +94,19 @@ class Multiplication{
 	double multiplication()
 	{
 		return this.num1*this.num2;
+	}
+}
+
+class Division{
+	private double num1,num2;
+	Division(double num1,double num2)
+	{
+		this.num1=num1;
+		this.num2=num2;
+	}
+	
+	double division()
+	{
+		return this.num1/this.num2;
 	}
 }
