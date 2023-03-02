@@ -23,6 +23,10 @@ public class ArithmeticCalculator {
 				Addition ad=new Addition(num1,num2);
 				System.out.println(ad.addition());
 				break;
+			case 2:
+				Subtraction sb=new Subtraction(num1,num2);
+				System.out.println(sb.subtraction());
+				break;
 			default:
 				System.out.println("Please enter a valid number!");
 			}
@@ -56,4 +60,19 @@ class Addition{
 		return this.num1+this.num2;
 	}
 }
+
+class Subtraction{
+	private double num1,num2;
+	Subtraction(double num1,double num2)
+	{
+		this.num1=num1;
+		this.num2=num2;
+	}
+	
+	double subtraction()
+	{
+		return this.num1-this.num2;
+	}
+}
+
 
