@@ -27,6 +27,10 @@ public class ArithmeticCalculator {
 				Subtraction sb=new Subtraction(num1,num2);
 				System.out.println(sb.subtraction());
 				break;
+			case 3:
+				Multiplication mt=new Multiplication(num1, num2);
+				System.out.println(mt.multiplication());
+				break;
 			default:
 				System.out.println("Please enter a valid number!");
 			}
@@ -75,4 +79,16 @@ class Subtraction{
 	}
 }
 
-
+class Multiplication{
+	private double num1,num2;
+	Multiplication(double num1,double num2)
+	{
+		this.num1=num1;
+		this.num2=num2;
+	}
+	
+	double multiplication()
+	{
+		return this.num1*this.num2;
+	}
+}
