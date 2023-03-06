@@ -1,5 +1,7 @@
 package SearchingSorting;
 
+import java.util.Arrays;
+
 public class SearchingSortingDemo {
 
 	public static void main(String[] args) {
@@ -8,6 +10,18 @@ public class SearchingSortingDemo {
 		System.out.println("index->"+n);
 		int x=BinarySearch();
 		System.out.println("index->"+x);
+		int y=ExponentialSearch();
+		System.out.println("index->"+y);
+	}
+
+	private static int ExponentialSearch() {
+		int arr[]= {1,3,5,6,7,9};
+		int i=1,n=arr.length,key=5;
+		if(arr[0]==key)
+			return 0;
+		while(i<n && arr[i]<=key)
+			i*=2;
+		return Arrays.binarySearch(arr, i/2,Math.min(i,n-1),key);
 	}
 
 	private static int BinarySearch() {
