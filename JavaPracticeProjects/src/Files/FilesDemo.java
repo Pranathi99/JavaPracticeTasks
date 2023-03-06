@@ -14,8 +14,10 @@ public class FilesDemo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		FileCreation();
-		FileWriterDemo();
-		FileReaderDemo();
+//		FileWriterDemo();
+//		FileReaderDemo();
+		BufferedWriterDemo();
+		BufferedReaderDemo();
 	}
 
 	private static void FileCreation() {
@@ -61,6 +63,55 @@ public class FilesDemo {
 				System.out.print((char)i);
 			}
 			fr.close();
+		}
+		catch(FileNotFoundException ex)
+		{
+			System.out.println(ex);
+		}
+		catch(IOException ex)
+		{
+			System.out.println(ex);
+		}
+	}
+	
+	private static void BufferedReaderDemo() {
+		// TODO Auto-generated method stub
+		String line="";
+		try {
+			File f=new File("sample.txt");
+			FileReader fr=new FileReader(f);
+			BufferedReader br=new BufferedReader(fr);
+			while((line=br.readLine())!=null)
+			{
+				System.out.println(line);
+			}
+			br.close();
+			fr.close();
+		}
+		catch(FileNotFoundException ex)
+		{
+			System.out.println(ex);
+		}
+		catch(IOException ex)
+		{
+			System.out.println(ex);
+		}
+	}
+
+	private static void BufferedWriterDemo() {
+		// TODO Auto-generated method stub
+		String line="";
+		try {
+			Scanner sc=new Scanner(System.in);
+			File f=new File("sample.txt");
+			FileWriter fw=new FileWriter(f,true);
+			BufferedWriter bw=new BufferedWriter(fw);
+			while((line=sc.nextLine())!="")
+			{
+				bw.append(line+"\n");
+			}
+			bw.close();
+			fw.close();
 		}
 		catch(FileNotFoundException ex)
 		{
