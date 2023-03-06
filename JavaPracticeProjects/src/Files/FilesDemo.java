@@ -14,10 +14,11 @@ public class FilesDemo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		FileCreation();
-//		FileWriterDemo();
-//		FileReaderDemo();
+		FileWriterDemo();
+		FileReaderDemo();
 		BufferedWriterDemo();
 		BufferedReaderDemo();
+		DeleteFile();
 	}
 
 	private static void FileCreation() {
@@ -40,7 +41,8 @@ public class FilesDemo {
 		try {
 			File f=new File("sample.txt");
 			FileWriter fw=new FileWriter(f);
-			fw.append("Hello World!");
+			fw.append("Hello World!\n Writtern using FileWriter\n");
+			//System.out.println("FileWriter--->Write done");
 			fw.close();
 		}
 		catch(FileNotFoundException ex)
@@ -55,6 +57,7 @@ public class FilesDemo {
 
 	private static void FileReaderDemo() {
 		int i;
+		//System.out.println("FileReader--->");
 		try {
 			File f=new File("sample.txt");
 			FileReader fr=new FileReader(f);
@@ -76,6 +79,7 @@ public class FilesDemo {
 	
 	private static void BufferedReaderDemo() {
 		// TODO Auto-generated method stub
+		//System.out.println("BufferedReader--->");
 		String line="";
 		try {
 			File f=new File("sample.txt");
@@ -110,6 +114,7 @@ public class FilesDemo {
 			{
 				bw.append(line+"\n");
 			}
+			//System.out.println("BufferedWriter--->Write/Append done");
 			bw.close();
 			fw.close();
 		}
@@ -118,6 +123,20 @@ public class FilesDemo {
 			System.out.println(ex);
 		}
 		catch(IOException ex)
+		{
+			System.out.println(ex);
+		}
+	}
+
+private static void DeleteFile() {
+		try {
+			File f=new File("sample.txt");
+			if(f.delete())
+				System.out.println("File Deleted!");
+			else
+				System.out.println("Unable to delete the file!"+f.getName());
+		}
+		catch(Exception ex)
 		{
 			System.out.println(ex);
 		}
