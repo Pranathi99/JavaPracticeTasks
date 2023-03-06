@@ -23,6 +23,25 @@ public class DSAlgosDemo {
 		for(i=0;i<3;i++)
 			pq.poll();
 		System.out.println(pq.peek());
+		/*MULTIPLY TWO MATRICES*/
+		int arr2[][]= {{1,2,3},{4,5,6},{7,8,9}};
+		int arr3[][]= {{1,2,3},{4,5,6},{7,8,9}};
+		int j;
+		int res[][]= {{0,0,0},{0,0,0},{0,0,0}};
+		for(i=0;i<3;i++)
+		{
+			for(j=0;j<3;j++)
+			{
+				for(k=0;k<3;k++)
+					res[i][j]+=arr2[i][k]*arr3[k][j];
+			}
+		}
+		for(i=0;i<3;i++)
+		{
+			for(j=0;j<3;j++)
+				System.out.print(res[i][j]+" ");
+			System.out.println();
+		}
 	}
 
 	private static void rightRotate(int[] arr, int i, int n, int k) {
