@@ -71,7 +71,8 @@ public class virtualKeyForYourRepositories {
 				}
 				System.out.println("--------------------------------------------------");
 				break;
-			
+			case "3":
+					return;
 			default:
 					System.out.println("Please enter valid input operation");	
 					System.out.println("--------------------------------------------------");
