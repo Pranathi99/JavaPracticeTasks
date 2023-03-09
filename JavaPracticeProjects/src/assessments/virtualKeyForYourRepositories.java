@@ -117,6 +117,7 @@ public class virtualKeyForYourRepositories {
 		{
 			al.remove(fileName);
 			mp.put(pathName, al);
+			System.out.println("File deleted successfully!");
 		}
 		else
 		{
