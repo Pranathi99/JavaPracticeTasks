@@ -6,10 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class virtualKeyForYourRepositories {
 
@@ -17,7 +14,6 @@ public class virtualKeyForYourRepositories {
 		// TODO Auto-generated method stub
 		System.out.println("Virtual Key For Your Repositories");
 		System.out.println("By :\nPranathi Ganti\nprganti@teksystems.com ");
-		Set<String>files=new TreeSet<String>();
 		Map<String,List<String>>mp=new HashMap<String,List<String>>();
 		
 		while(true)
