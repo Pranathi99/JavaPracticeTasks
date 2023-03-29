@@ -1,2 +1,1 @@
-# JavaPracticeTasks
-Java Practice Projects from Simplilearn course
+Phase 1 Project
